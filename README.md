@@ -45,6 +45,45 @@ If you specify a value less than 15, it will be handled as 15 internally.
 Note that auto-update-packages does not adhere the value strictly.
 It has some margin around 5%.
 
+<<<<<<< HEAD
+=======
+### Humanized Package Names
+
+* Config Key Path: `auto-update-packages.humanizedPackageNames`
+* Default: false
+
+**Example**: For this package, `auto-update-packages` would become `Auto Update Packages`.
+
+This applies to both **Notifications** and the [**Blacklist**](#blacklist).
+
+### Blacklist
+
+* Config Key Path: `auto-update-packages.blacklist`
+* Default: None
+* Type: CSV
+
+If, for any reason, you feel the urge to exclude some package from updating automatically,
+add its name to the **Blacklist**.
+
+Separate values by commas (and optionally spaces), as in:
+
+`auto-update-packages, welcome, asteroids`
+
+or
+
+`Auto Update Packages, Welcome, Asteroids`
+
+if [**Humanized Package Names**](#humanized-package-names) is checked
+
+### Disable Notification
+
+* Config Key Path: `auto-update-packages.disableNotification`
+* Default: false
+
+Disables the notification on automatic package updates. This will still show a
+notification if you have triggered a manual update.
+
+>>>>>>> a12dbd1556ac5dcf075c711033690d6c3258c586
 ## License
 
 Copyright (c) 2014 Yuji Nakayama

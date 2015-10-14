@@ -9,6 +9,7 @@ module.exports =
   updatePackages: (isAutoUpdate = true) ->
     @runApmUpgrade (log) =>
       entries = @parseLog(log)
+<<<<<<< HEAD
       summary = @generateSummary(entries, isAutoUpdate)
       return unless summary
       @notify
@@ -16,6 +17,18 @@ module.exports =
         message: summary
         sender: ATOM_BUNDLE_IDENTIFIER
         activate: ATOM_BUNDLE_IDENTIFIER
+=======
+      summary = @generateSummary(entries)
+      unless summary
+        return if @options.auto
+        summary = 'No package updates available'
+      unless @options.auto && @options.disableNotification
+        @notify
+          title: 'Atom Package Updates'
+          message: summary
+          sender: ATOM_BUNDLE_IDENTIFIER
+          activate: ATOM_BUNDLE_IDENTIFIER
+>>>>>>> a12dbd1556ac5dcf075c711033690d6c3258c586
 
   runApmUpgrade: (callback) ->
     command = atom.packages.getApmPath()
