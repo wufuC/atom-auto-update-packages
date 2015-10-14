@@ -6,8 +6,6 @@ getFs = ->
   fs ?= require 'fs-plus'
 
 NAMESPACE = 'auto-update-packages'
-<<<<<<< HEAD
-=======
 CONFIG_KEY_INTERVAL_MINUTES = 'intervalMinutes'
 CONFIG_KEY_HUMANIZED_PACKAGE_NAMES = 'humanizedPackageNames'
 CONFIG_KEY_DISABLE_NOTIFICATION = 'disableNotification'
@@ -19,7 +17,6 @@ CONFIG_DEFAULTS[CONFIG_KEY_HUMANIZED_PACKAGE_NAMES] = false
 CONFIG_DEFAULTS[CONFIG_KEY_DISABLE_NOTIFICATION] = false
 CONFIG_DEFAULTS[CONFIG_KEY_BLACKLIST] = []
 
->>>>>>> a12dbd1556ac5dcf075c711033690d6c3258c586
 WARMUP_WAIT = 10 * 1000
 MINIMUM_AUTO_UPDATE_BLOCK_DURATION_MINUTES = 15
 
@@ -70,9 +67,6 @@ module.exports =
 
   updatePackages: (isAutoUpdate = true) ->
     PackageUpdater ?= require './package-updater'
-<<<<<<< HEAD
-    PackageUpdater.updatePackages(isAutoUpdate)
-=======
     humanizedPackageNames =
       atom.config.get("#{NAMESPACE}.#{CONFIG_KEY_HUMANIZED_PACKAGE_NAMES}")
     blacklist = atom.config.get("#{NAMESPACE}.#{CONFIG_KEY_BLACKLIST}")
@@ -83,8 +77,8 @@ module.exports =
       blacklist: blacklist
       disableNotification: disableNotification
 
+    # PackageUpdater.updatePackages(isAutoUpdate)
     PackageUpdater.updatePackages(options)
->>>>>>> a12dbd1556ac5dcf075c711033690d6c3258c586
     @saveLastUpdateTime()
 
   getAutoUpdateBlockDuration: ->

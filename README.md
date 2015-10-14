@@ -45,8 +45,6 @@ If you specify a value less than 15, it will be handled as 15 internally.
 Note that auto-update-packages does not adhere the value strictly.
 It has some margin around 5%.
 
-<<<<<<< HEAD
-=======
 ### Humanized Package Names
 
 * Config Key Path: `auto-update-packages.humanizedPackageNames`
@@ -83,7 +81,6 @@ if [**Humanized Package Names**](#humanized-package-names) is checked
 Disables the notification on automatic package updates. This will still show a
 notification if you have triggered a manual update.
 
->>>>>>> a12dbd1556ac5dcf075c711033690d6c3258c586
 ## License
 
 Copyright (c) 2014 Yuji Nakayama
